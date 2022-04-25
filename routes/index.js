@@ -3,7 +3,7 @@ const router = express.Router();
 const fs = require('fs')
 
 router.get("/", (req, res) => {
-  res.send("Contoso Retirement Backend");
+  res.send("Internal Contoso Retirement Backend");
 });
 
 router.get("/employees", (req, res) => {
