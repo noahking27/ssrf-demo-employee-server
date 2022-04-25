@@ -3,7 +3,6 @@ const bodyParser = require("body-parser");
 const swaggerJsdoc = require("swagger-jsdoc");
 const swaggerUi = require("swagger-ui-express");
 const routes = require("./routes");
-const swaggerDocument = require('./swagger.json');
 const app = express();
 const port = 4312;
 
@@ -39,7 +38,7 @@ const options = {
 
 const specs = swaggerJsdoc(options);
 app.use("/api", routes);
-app.use("/docs", swaggerUi.serve,   swaggerUi.setup(swaggerDocument, { explorer: true }));
+app.use("/docs", swaggerUi.serve,   swaggerUi.setup(specs, { explorer: true }));
 
 
 app.listen(port, () => {
